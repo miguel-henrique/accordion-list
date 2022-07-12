@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
 
-function App() {
+import TreeList from './components/TreeList/TreeList'
+
+import api from './services/api'
+
+import './App.scss';
+//import 'antd/dist/antd.css';
+import 'antd';
+
+
+const App = () => {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    api.get('/data')
+      .then((res) => {
+        setData(Object.values(res.data))
+      })
+      .catch(err => console.log('Error -->', err))
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <TreeList data={data} />
     </div>
-  );
+  )
 }
 
 export default App;
