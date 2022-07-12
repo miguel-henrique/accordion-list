@@ -1,5 +1,6 @@
 .tree-item-container {
   width: 100%;
+  border-radius: 15px;
 
   &.expanded {
     background-color: rgb(250, 248, 255);
@@ -12,9 +13,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 15px;
 
     &:hover {
-      background: #eee;
+      background: #b2b4ff;
     }
 
     & > div {
