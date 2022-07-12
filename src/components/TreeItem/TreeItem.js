@@ -74,7 +74,7 @@ const TreeItem = ({
       <div className="item-header">
         <div onClick={toggleChecked}>
           <Checkbox checked={checked} />
-          <span>{item.name}</span>
+          <span alt={item.name}>{item.name}</span>
         </div>
 
         {children.length > 0 && (
