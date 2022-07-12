@@ -5,7 +5,6 @@ import TreeList from './components/TreeList/TreeList'
 import api from './services/api'
 
 import './App.scss';
-//import 'antd/dist/antd.css';
 import 'antd';
 
 
