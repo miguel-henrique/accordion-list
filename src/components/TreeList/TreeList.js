@@ -15,6 +15,8 @@ const TreeList = ({ data, checked }) => {
   const renderList = (item, i) => {
     const children = Object.values(item.children)
 
+    console.log(data)
+
     return (
       <TreeItem 
         key={item.id}
@@ -27,6 +29,7 @@ const TreeList = ({ data, checked }) => {
   
   return (
     <List>
+      {console.log}
       { data.map(renderList) }
     </List>
   )
